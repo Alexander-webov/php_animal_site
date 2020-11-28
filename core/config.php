@@ -1,5 +1,4 @@
 <?php
-
 	define('SERVERNAME','localhost');
 	define('USER','mysql');
 	define('PASSWORD','mysql');
