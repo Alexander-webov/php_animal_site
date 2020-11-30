@@ -1,6 +1,5 @@
 <?php
-	require_once 'core/config.php';
-	require_once 'core/function.php';
+	require 'template/header.php';
 	if (isset($_POST['title']) AND $_POST['title'] !='') {
 
 	$title = $_POST['title'];
@@ -36,20 +35,41 @@
 	}
 	
 ?>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<form action="" method="POST" enctype="multipart/form-data" class="mt-5">
+				<div class="form-group">
+					 <label for="exampleInputEmail1">Название животного:</label>
+					 <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Название животного:">
+			  	  </div>
+			  	    <div class="form-group">
+					    <label for="exampleFormControlTextarea1">Короткое описание:</label>
+					    <textarea class="form-control" name="descr-min" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+					<div class="form-group">
+					    <label for="exampleFormControlTextarea1">Описание:</label>
+					    <textarea class="form-control" name="descr" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+					  <div class="form-group">
+					    <label for="exampleFormControlFile1">Фото</label>
+					    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+					</div>
+					<div class="form-group">
+					 <label for="exampleInputEmail1">Введите теги:</label>
+					 <input type="text" name="tag" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите теги:">
+			  	  </div>
+			  	<div class="form-group text-right">
+			  		<input  class="btn btn-primary" type="submit" name="add"> 
+			  	</div>
+			  </form>
+			  <div class="mt-4 mb-4"><a href="admin.php">Перейти в админку</a></div>
 
-  <form action="" method="POST" enctype="multipart/form-data">
-  	<p>Название животного: <input type="text" name="title"></p>
-  	<p>Короткое описание:</p>
-  	<textarea name="descr-min"></textarea>
-  	<p>Описание:</p>
-  	<textarea name="descr"></textarea>
-  	<p>Фото <input type="file" name="image"></p>
-  	<p>Введите теги: <input type="text" name="tag"> </p>
-  	<p> <input type="submit" name="add"> </p>
+		</div>
+	</div>
 
-
-  </form>
-  <div><a href="admin.php">Перейти в админку</a></div>
+</div>
+  
 
 
 <?php
@@ -60,5 +80,8 @@ if (isset($_COOKIE['bd_creat_success']) AND $_COOKIE['bd_creat_success'] != '') 
 	}
 }
 
+?>
 
-
+<?php 
+	require 'template/footer.php';
+ ?>

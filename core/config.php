@@ -5,4 +5,7 @@
 	define('DBNAME','animal');
 
 
+define('TITLE', 'Мир animals');
+
+
 ?>
